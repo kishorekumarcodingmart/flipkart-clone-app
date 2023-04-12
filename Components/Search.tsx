@@ -50,10 +50,6 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     height: 55,
     backgroundColor: 'white',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
   },
   toggleWrapper: {
     width: '20%',

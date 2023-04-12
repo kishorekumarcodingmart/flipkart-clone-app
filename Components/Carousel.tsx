@@ -18,6 +18,8 @@ function Carousel() {
         showsHorizontalScrollIndicator={false}
         horizontal
         keyExtractor={item => item.key}
+        decelerationRate={'fast'}
+        snapToInterval={width}
         renderItem={({item}) => {
           return (
             <Image

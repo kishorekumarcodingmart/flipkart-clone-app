@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {FlatList, Image, ScrollView, View} from 'react-native';
+import {FlatList, Image, ScrollView, View, StatusBar} from 'react-native';
 import Header from '../Components/Header';
 import Search from '../Components/Search';
 import Carousel from '../Components/Carousel';
@@ -10,11 +10,11 @@ import SoundProducts from '../JSON/SoundProducts.json';
 import PriceDropdown from '../JSON/PriceDropdown.json';
 import ServiceCarousel from '../JSON/ServiceCarousel.json';
 import Spotlight from '../Components/Spotlight';
-import Footer from '../Components/Footer';
 
-function HomeScreens() {
+function HomeScreen() {
   return (
     <Fragment>
+      <StatusBar backgroundColor={'white'} barStyle={'dark-content'} />
       <ScrollView stickyHeaderIndices={[1]}>
         <Header />
         <Search />
@@ -82,9 +82,8 @@ function HomeScreens() {
           style={{height: 52, width: '100%'}}
         />
       </ScrollView>
-      <Footer />
     </Fragment>
   );
 }
 
-export default HomeScreens;
+export default HomeScreen;

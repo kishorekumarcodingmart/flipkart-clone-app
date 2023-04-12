@@ -81,7 +81,6 @@ const style = StyleSheet.create({
   festiveSpecialWrapper: {
     width: '100%',
     height: 400,
-    backgroundColor: 'red',
   },
   festiveSpecialHeaderImage: {
     height: '18%',
