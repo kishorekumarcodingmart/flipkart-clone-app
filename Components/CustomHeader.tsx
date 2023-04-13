@@ -3,16 +3,23 @@ import React from 'react';
 import SearchIcons from 'react-native-vector-icons/Feather';
 import MicIcons from 'react-native-vector-icons/FontAwesome';
 
-const CustomHeader = () => {
+interface ICustomHeaderProps {
+  name: string;
+  options: boolean;
+}
+
+const CustomHeader = ({name, options}: ICustomHeaderProps) => {
   return (
     <View style={style.customHeader}>
       <View>
-        <Text style={{color: 'white', fontSize: 18}}>All Categories</Text>
+        <Text style={{color: 'white', fontSize: 18}}>{name}</Text>
       </View>
-      <View style={{flexDirection: 'row', gap: 30}}>
-        <SearchIcons name="search" size={20} color="white" />
-        <MicIcons name="microphone" size={20} color="white" />
-      </View>
+      {options && (
+        <View style={{flexDirection: 'row', gap: 30}}>
+          <SearchIcons name="search" size={20} color="white" />
+          <MicIcons name="microphone" size={20} color="white" />
+        </View>
+      )}
     </View>
   );
 };
