@@ -21,7 +21,7 @@ const NotificationMessage = () => {
           2 days age
         </Text>
       </View>
-      <View style={{width: '12%', borderWidth: 1}}>
+      <View style={{width: '12%'}}>
         <ChecklistIcon name="checklist" size={50} color="#2874f0" />
       </View>
     </View>

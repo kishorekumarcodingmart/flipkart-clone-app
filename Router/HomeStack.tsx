@@ -5,6 +5,8 @@ import CategoryScreen from '../Screens/CategoryScreen';
 import Footer from '../Components/Footer';
 import CustomHeader from '../Components/CustomHeader';
 import NotificationScreen from '../Screens/NotificationScreen';
+import AccountScreen from '../Screens/AccountScreen';
+import AccountHeader from '../Components/AccountHeader';
 
 const Stack = createNativeStackNavigator();
 function HomeStack() {
@@ -33,6 +35,11 @@ function HomeStack() {
             ),
           }}
           component={NotificationScreen}
+        />
+        <Stack.Screen
+          options={{header: () => <AccountHeader />}}
+          name="Account"
+          component={AccountScreen}
         />
       </Stack.Navigator>
       <Footer />
