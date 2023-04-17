@@ -79,7 +79,7 @@ function Footer() {
 const style = StyleSheet.create({
   footerWrapper: {
     height: 48,
-    backgroundColor: 'white',
+    backgroundColor: 'red',
     borderTopWidth: 1,
     borderTopColor: '#cccccc',
     display: 'flex',
