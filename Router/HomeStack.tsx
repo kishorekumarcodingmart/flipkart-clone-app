@@ -7,6 +7,7 @@ import CustomHeader from '../Components/CustomHeader';
 import NotificationScreen from '../Screens/NotificationScreen';
 import AccountScreen from '../Screens/AccountScreen';
 import AccountHeader from '../Components/AccountHeader';
+import CartScreen from '../Screens/CartScreen';
 
 const Stack = createNativeStackNavigator();
 function HomeStack() {
@@ -40,6 +41,11 @@ function HomeStack() {
           options={{header: () => <AccountHeader />}}
           name="Account"
           component={AccountScreen}
+        />
+        <Stack.Screen
+          name="Cart"
+          options={{headerTitle: 'My Cart'}}
+          component={CartScreen}
         />
       </Stack.Navigator>
       <Footer />
