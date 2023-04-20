@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {
   FlatList,
   Image,
@@ -8,8 +8,29 @@ import {
 } from 'react-native';
 import CarouselData from '../JSON/Carousel.json';
 
+interface IItems {
+  key: string;
+  url: string;
+}
+
 function Carousel() {
   const {width} = useWindowDimensions();
+
+  const keyExtractor = useCallback((item: IItems) => item.key, []);
+
+  const renderItems = useCallback(({item}: any) => {
+    return (
+      <Image
+        style={[
+          style.carouselImage,
+          {
+            width,
+          },
+        ]}
+        source={{uri: item.url}}
+      />
+    );
+  }, []);
 
   return (
     <View>
@@ -17,22 +38,11 @@ function Carousel() {
         data={CarouselData}
         showsHorizontalScrollIndicator={false}
         horizontal
-        keyExtractor={item => item.key}
+        keyExtractor={keyExtractor}
         decelerationRate={'fast'}
         snapToInterval={width}
-        renderItem={({item}) => {
-          return (
-            <Image
-              style={[
-                style.carouselImage,
-                {
-                  width,
-                },
-              ]}
-              source={{uri: item.url}}
-            />
-          );
-        }}
+        renderItem={renderItems}
+        maxToRenderPerBatch={10}
       />
     </View>
   );
